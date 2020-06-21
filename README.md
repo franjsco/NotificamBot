@@ -15,7 +15,7 @@ Notificambot reads notifications from a queue (pub/sub on redis).
 6. Launch with `node src/server.js`
 
 
-You can configure events into `src/template.js`.
+You can configure templates into `src/templates.js`.
 
 ## Test 
 
