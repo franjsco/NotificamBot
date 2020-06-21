@@ -1,6 +1,6 @@
 # NotificamBot
 
-Telegram bot to reiceve notification.
+Telegram bot to reiceve notifications.
 
 Notificambot reads notifications from a queue (pub/sub on redis).
 
