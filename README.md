@@ -7,7 +7,7 @@ Notificambot reads notifications from a queue (pub/sub on redis).
 
 
 ## Configuration 
-1. Create telegram bot with **@botFater**.
+1. Create telegram bot with **@BotFather**.
 2. Clone this repository.
 3. Start a redis instance on localhost.
 4. Install dependencies with `npm install`.
