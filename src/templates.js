@@ -35,7 +35,6 @@ const handler = (msg) => {
 
 
 const template = {
-  genericTemplate,
   handler
 }
 
