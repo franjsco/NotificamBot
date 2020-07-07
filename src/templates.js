@@ -7,6 +7,9 @@ const genericTemplate = (msg) => {
   return value;
 }
 
+const noTemplate = (msg) => {
+  return msg;
+}
 
 const handler = (msg) => {
   let msgParsed;
@@ -24,7 +27,7 @@ const handler = (msg) => {
       value = genericTemplate(msgParsed);
       break;
     default:
-      value = {}
+      value = noTemplate(msgParsed)
   }
 
   return value;
