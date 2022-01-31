@@ -1,8 +1,8 @@
 
 const genericTemplate = (msg) => {
-  value = `====
-  Code: ${msg.code}
-  Description: ${msg.description}`;
+  value = `---
+  type: ${msg.type}
+  description: ${msg.description}`;
 
   return value;
 }
@@ -22,7 +22,7 @@ const handler = (msg) => {
     return 'Error';
   }
 
-  switch (msgParsed.code) {
+  switch (msgParsed.type) {
     case 'generic':
       value = genericTemplate(msgParsed);
       break;

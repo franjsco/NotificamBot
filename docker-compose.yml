@@ -1,0 +1,22 @@
+version: '3.3'
+
+services:
+  bot:
+    container_name: notificam-bot-server
+    build: .
+    image: 'notificam-bot'
+    restart: always
+    env_file: .env
+    depends_on:
+      - redis
+  
+  redis:
+    container_name: notificam-bot-redis
+    image: redis
+    restart: always
+    ports: 
+      - 6379:6379
+    env_file: .env
+    command: >
+      --requirepass ${REDIS_PASSWORD}
+

@@ -1,12 +1,29 @@
 const redis = require('redis');
+const prompt = require('prompt');
 
-const publisher = redis.createClient();
+require('dotenv').config();
 
-publisher.publish("NotificamBot", JSON.stringify({
-    code:'generic',
-    description: 'event test',
-    options: {}
-}));
+const { 
+    REDIS_CHANNEL,
+    REDIS_PASSWORD
+  } =  process.env;
+
+const publisher = redis.createClient({
+    url: `redis://:${REDIS_PASSWORD}@localhost`
+});
 
 
-publisher.quit();
+
+prompt.start();
+
+prompt.get(['type', 'description'], (err, result) => {
+    publisher.publish(REDIS_CHANNEL, JSON.stringify({
+        type: result.type   ,
+        description: result.description,
+        options: {}
+    }));
+
+
+    publisher.quit();
+})
+
