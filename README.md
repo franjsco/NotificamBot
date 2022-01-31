@@ -30,7 +30,7 @@ docker-compose up --build
 ```
 
 
-3. Search your bot on telegram and start it. The chat id will be displayed on the terminal
+3. Search your bot on telegram and start it. The chat id will be displayed on the terminal.
 Copy it into .env and stop (CTRL+C) and start containers.
 
 ```sh
